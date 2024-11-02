@@ -1,7 +1,7 @@
 import { sql } from '@vercel/postgres';
 
 export default async function Cards() {
-  const { rows } = await sql `SELECT * FROM cards WHERE nextScheduledTime < NOW()`;
+  const { rows } = await sql `SELECT * FROM video`;
 
   return (
     <div>
@@ -13,7 +13,7 @@ export default async function Cards() {
           </div>
         ))
       ) : (
-        <p>You&apos;re done learning for now! No cards to view, Come back later.</p>
+        <p>There are no videos.</p>
       )}
     </div>
   );

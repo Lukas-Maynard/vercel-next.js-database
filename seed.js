@@ -4,12 +4,12 @@ const prisma = new PrismaClient()
 
 
 const seed = async () => {
-        const createMany = await prisma.Video.createMany({
+        const createMany = await prisma.video.createMany({
             data: [
-                { id: 5, prompt: 'Which hero says "Justice rains from above"?', answer: 'Pharah', understood: 0, nextscheduledtime: null },
-                { id: 6, prompt: 'What is the name of the robotic monk hero?', answer: 'Zenyatta', understood: 0, nextscheduledtime: null },
-                { id: 7, prompt: 'Which hero can rewind time?', answer: 'Tracer', understood: 0, nextscheduledtime: null },
-                { id: 8, prompt: 'What is the maximum charge level of Zarya’s particle cannon?', answer: '100', understood: 0, nextscheduledtime: null },
+            { name: 'Cat video', url: '/videos/test.mp4', votes: 10, length: 100 },
+            { name: 'Dog video', url: '/videos/test.mp4', votes: 0, length: 180 },
+            { name: 'An analsysis of undersea audio structures', url: '/videos/test.mp4', votes: 2, length: 60 },
+            { name: 'Test video, please ignore', url: '/videos/test.mp4', votes: 100, length: 270 },
             ],
             skipDuplicates: true
         })

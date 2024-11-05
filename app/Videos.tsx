@@ -1,6 +1,6 @@
 import { sql } from '@vercel/postgres';
 
-export default async function Cards() {
+export default async function Videos() {
   const { rows } = await sql `SELECT * FROM video`;
 
   return (
@@ -9,7 +9,8 @@ export default async function Cards() {
       {rows.length > 0 ? (
         rows.map((row) => (
           <div key={row.id}>
-            {row.id} - {row.prompt} - {row.answer} - {row.understood}%
+            {/*  name, url, votes, length */}
+            {row.id} - {row.name} - {row.url} - {row.length}
           </div>
         ))
       ) : (

@@ -1,9 +1,9 @@
-import Cards from "./cards";
+import Videos from "./Videos";
 
 export default function Home() {
   return (
     <div>
-      <Cards />
+      <Videos />
     </div>
   );
 }
